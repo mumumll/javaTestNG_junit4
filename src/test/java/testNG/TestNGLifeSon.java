@@ -6,7 +6,7 @@ import org.testng.annotations.*;
  * @author mumu
  * @Title: ${file_name}
  * @Package ${package_name}
- * @Description: ${todo}
+ * @Description: 执行顺序子类
  * @date 2020/11/1117:42
  */
 public class TestNGLifeSon extends TestNGLife {
