@@ -1,34 +1,32 @@
-package testNG;
-
-/**
- * @program: testng
- * @description: 分组测试
- * @author: mumu
- * @create: 2021-04-25 23:37
- **/
+package testng;
 
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 
-public  class demo3_Group {
-
-    @Test(groups = {"group01"})
+/**
+ * @program: testng
+ * @description: 忽略测试和依赖测试
+ * @author: mumu
+ * @create: 2021-04-25 23:37
+ **/
+public class Demo2_Ignore {
+    @Test
     public void putInA(){
         System.out.println("装入坚果A");
     }
-    @Test(groups = {"group01"})
+    @Test
     public void putInB(){
         System.out.println("装入坚果B");
     }
-    @Test(groups = {"group01","group02"})
+    @Test(enabled = false)
     public void putInC(){
         System.out.println("装入坚果C");
     }
-    @Test(groups = {"group02"})
+    @Test(dependsOnMethods = { "putInA" })
     public void putInD(){
         System.out.println("装入坚果D");
     }
-    @Test(groups = {"group02"})
+    @Test(dependsOnMethods = { "putInB" })
     public void putInE(){
         System.out.println("装入坚果E");
     }
@@ -36,6 +34,4 @@ public  class demo3_Group {
     public void record(){
         System.out.println("头盔哥统一记录");
     }
-
-
 }

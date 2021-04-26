@@ -1,15 +1,14 @@
-package testNG;
+package testng;
+
+/**
+ * testng测试用例1
+ */
 
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 
-/**
- * @program: testng
- * @description: 忽略测试和依赖测试
- * @author: mumu
- * @create: 2021-04-25 23:37
- **/
-public class Demo2_Ignore {
+public  class Demo1_PutIn {
+
     @Test
     public void putInA(){
         System.out.println("装入坚果A");
@@ -18,15 +17,15 @@ public class Demo2_Ignore {
     public void putInB(){
         System.out.println("装入坚果B");
     }
-    @Test(enabled = false)
+    @Test
     public void putInC(){
         System.out.println("装入坚果C");
     }
-    @Test(dependsOnMethods = { "putInA" })
+    @Test
     public void putInD(){
         System.out.println("装入坚果D");
     }
-    @Test(dependsOnMethods = { "putInB" })
+    @Test
     public void putInE(){
         System.out.println("装入坚果E");
     }
@@ -34,4 +33,6 @@ public class Demo2_Ignore {
     public void record(){
         System.out.println("头盔哥统一记录");
     }
+
+
 }
